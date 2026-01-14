@@ -37,11 +37,7 @@ create table post_history (
     constraint fk_history_posts foreign key (post_id) references posts(post_id) on delete cascade
 );
 
-insert into likes (user_id, post_id, liked_at) 
-values (2, 1, '2025-01-10 11:00:00'),
-(3, 1, '2025-01-10 13:00:00'),
-(1, 3, '2025-01-11 10:00:00'),
-(3, 4, '2025-01-12 16:00:00');
+
 
 insert into users (username, email, created_at) 
 values('alice', 'alice@example.com', '2025-01-01'),
@@ -75,6 +71,12 @@ values(1, 'hello world from alice!', '2025-01-10 10:00:00'),
 
 delete from posts where post_id = 2;
 select * from users;
+
+insert into likes (user_id, post_id, liked_at) 
+values (2, 1, '2025-01-10 11:00:00'),
+(3, 1, '2025-01-10 13:00:00'),
+(1, 3, '2025-01-11 10:00:00'),
+(3, 4, '2025-01-12 16:00:00');
 
 -- ------------Bai 2:
 delimiter //
